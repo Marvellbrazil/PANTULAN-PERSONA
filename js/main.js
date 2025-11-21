@@ -939,7 +939,7 @@ function initializeResultPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const personalityType = urlParams.get('type') || 'INTJ';
     
-    // Personality data with updated Spotify playlists
+    // Personality data with updated Spotify playlists and colors
     const personalityData = {
         INTJ: {
             name: "The Architect",
@@ -948,8 +948,9 @@ function initializeResultPage() {
             traits: ["Visioner", "Strategis", "Analitis", "Deterministik", "Mandiri"],
             playlist: "https://open.spotify.com/playlist/6XLe6xcYSiIJhH30yL4bCD?si=a54b84e55b574f7c",
             compatibility: ["ENFP", "ENTP"],
-            colors: ["Ungu", "Biru Tua"],
-            environment: "Lingkungan yang tenang dan terstruktur"
+            colors: ["#667eea", "#764ba2"],
+            environment: "Lingkungan yang tenang dan terstruktur",
+            bgColor: "personality-intj"
         },
         INTP: {
             name: "The Thinker",
@@ -958,8 +959,9 @@ function initializeResultPage() {
             traits: ["Inovatif", "Logis", "Kurios", "Abstrak", "Kreatif"],
             playlist: "https://open.spotify.com/playlist/4Oh3b8bvVKOrkj079iXbM6?si=3d9bfc93511842d1",
             compatibility: ["ENTJ", "ENFJ"],
-            colors: ["Biru", "Hijau"],
-            environment: "Ruang kerja pribadi yang tenang"
+            colors: ["#4facfe", "#00f2fe"],
+            environment: "Ruang kerja pribadi yang tenang",
+            bgColor: "personality-intp"
         },
         ENTJ: {
             name: "The Commander",
@@ -968,8 +970,9 @@ function initializeResultPage() {
             traits: ["Tegas", "Visioner", "Organisator", "Efisien", "Karismatik"],
             playlist: "https://open.spotify.com/playlist/4tRHeotm3SmJsalwFQmqbC?si=75871952c918407f",
             compatibility: ["INTP", "INFP"],
-            colors: ["Merah", "Emas"],
-            environment: "Lingkungan dinamis dengan tanggung jawab"
+            colors: ["#f093fb", "#f5576c"],
+            environment: "Lingkungan dinamis dengan tanggung jawab",
+            bgColor: "personality-entj"
         },
         ENTP: {
             name: "The Debater",
@@ -978,8 +981,9 @@ function initializeResultPage() {
             traits: ["Cerdas", "Inovatif", "Energik", "Argumentatif", "Pandai"],
             playlist: "https://open.spotify.com/playlist/5lmyYiNY4WpkWizIQfT7OW?si=66b921131d4e41e7",
             compatibility: ["INFJ", "INTJ"],
-            colors: ["Oranye", "Ungu"],
-            environment: "Lingkungan yang menantang dan berubah-ubah"
+            colors: ["#ff9a9e", "#fecfef"],
+            environment: "Lingkungan yang menantang dan berubah-ubah",
+            bgColor: "personality-entp"
         },
         INFJ: {
             name: "The Advocate",
@@ -988,8 +992,9 @@ function initializeResultPage() {
             traits: ["Idealistis", "Berprinsip", "Inspiratif", "Intuitif", "Kreatif"],
             playlist: "https://open.spotify.com/playlist/0S7U6idUEvlFDjbUHAK8HQ?si=3e377ae8aa2e4b2c",
             compatibility: ["ENFP", "ENTP"],
-            colors: ["Ungu", "Hijau"],
-            environment: "Lingkungan yang bermakna dan harmonis"
+            colors: ["#a8edea", "#fed6e3"],
+            environment: "Lingkungan yang bermakna dan harmonis",
+            bgColor: "personality-infj"
         },
         INFP: {
             name: "The Mediator",
@@ -998,8 +1003,9 @@ function initializeResultPage() {
             traits: ["Empatik", "Kreatif", "Idealistis", "Fleksibel", "Artistik"],
             playlist: "https://open.spotify.com/playlist/6avRBWsApQehZSvV1Xuy4m?si=9bc4483be1694f1b",
             compatibility: ["ENFJ", "ENTJ"],
-            colors: ["Hijau", "Biru"],
-            environment: "Lingkungan yang mendukung ekspresi diri"
+            colors: ["#d299c2", "#fef9d7"],
+            environment: "Lingkungan yang mendukung ekspresi diri",
+            bgColor: "personality-infp"
         },
         ENFJ: {
             name: "The Protagonist",
@@ -1008,8 +1014,9 @@ function initializeResultPage() {
             traits: ["Karismatik", "Inspiratif", "Empatik", "Organisator", "Persuasif"],
             playlist: "https://open.spotify.com/playlist/2yyz0PaJ5o0nq8nizAwNR6?si=4f1b21e802b24803",
             compatibility: ["INFP", "ISFP"],
-            colors: ["Emas", "Merah"],
-            environment: "Lingkungan sosial yang harmonis"
+            colors: ["#89f7fe", "#66a6ff"],
+            environment: "Lingkungan sosial yang harmonis",
+            bgColor: "personality-enfj"
         },
         ENFP: {
             name: "The Campaigner",
@@ -1018,8 +1025,9 @@ function initializeResultPage() {
             traits: ["Antusias", "Kreatif", "Sosial", "Optimistis", "Spontan"],
             playlist: "https://open.spotify.com/playlist/3vV3zUk4JQwfPJvrzoYeqS?si=2c0cc93264244fed",
             compatibility: ["INTJ", "INFJ"],
-            colors: ["Oranye", "Merah Muda"],
-            environment: "Lingkungan yang dinamis dan sosial"
+            colors: ["#fdbb2d", "#22c1c3"],
+            environment: "Lingkungan yang dinamis dan sosial",
+            bgColor: "personality-enfp"
         },
         ISTJ: {
             name: "The Logistician",
@@ -1028,8 +1036,9 @@ function initializeResultPage() {
             traits: ["Praktis", "Dapat Diandalkan", "Bertanggung Jawab", "Tradisional", "Terorganisir"],
             playlist: "https://open.spotify.com/playlist/3c0U9xTSMJrX4A5omWt0gK?si=ff401797c833459c",
             compatibility: ["ESFP", "ESTP"],
-            colors: ["Biru", "Abu-abu"],
-            environment: "Lingkungan yang terstruktur dan terorganisir"
+            colors: ["#8e9eab", "#eef2f3"],
+            environment: "Lingkungan yang terstruktur dan terorganisir",
+            bgColor: "personality-istj"
         },
         ISFJ: {
             name: "The Defender",
@@ -1038,8 +1047,9 @@ function initializeResultPage() {
             traits: ["Protektif", "Penuh Kasih", "Dapat Diandalkan", "Tradisional", "Praktis"],
             playlist: "https://open.spotify.com/playlist/3KMb5q5AUYv70a72dfzvwh?si=ec695aae4cf146f1",
             compatibility: ["ESFP", "ESTP"],
-            colors: ["Biru Muda", "Merah Muda"],
-            environment: "Lingkungan yang mendukung dan stabil"
+            colors: ["#a3bded", "#6991c7"],
+            environment: "Lingkungan yang mendukung dan stabil",
+            bgColor: "personality-isfj"
         },
         ESTJ: {
             name: "The Executive",
@@ -1048,8 +1058,9 @@ function initializeResultPage() {
             traits: ["Tegas", "Terorganisir", "Tradisional", "Pemimpin", "Praktis"],
             playlist: "https://open.spotify.com/playlist/7j7LfYqwkyvg0Wyx0FQkfy?si=21ef71e601304b1c",
             compatibility: ["ISFP", "ISTP"],
-            colors: ["Biru Navy", "Merah"],
-            environment: "Lingkungan yang terstruktur dengan hierarki jelas"
+            colors: ["#fad0c4", "#ffd1ff"],
+            environment: "Lingkungan yang terstruktur dengan hierarki jelas",
+            bgColor: "personality-estj"
         },
         ESFJ: {
             name: "The Consul",
@@ -1058,8 +1069,9 @@ function initializeResultPage() {
             traits: ["Peduli", "Sosial", "Populer", "Tradisional", "Praktis"],
             playlist: "https://open.spotify.com/playlist/4mEJvZ8NpnXzSzrm9qKDev?si=2323afb451384ba5",
             compatibility: ["ISFP", "ISTP"],
-            colors: ["Merah Muda", "Kuning"],
-            environment: "Lingkungan sosial yang harmonis"
+            colors: ["#ffecd2", "#fcb69f"],
+            environment: "Lingkungan sosial yang harmonis",
+            bgColor: "personality-esfj"
         },
         ISTP: {
             name: "The Virtuoso",
@@ -1068,8 +1080,9 @@ function initializeResultPage() {
             traits: ["Berani", "Praktis", "Fleksibel", "Spontan", "Mandiri"],
             playlist: "https://open.spotify.com/playlist/0krQvLDSmus5DLnsPHdWFV?si=ad410a414dac4eef",
             compatibility: ["ESFJ", "ESTJ"],
-            colors: ["Perak", "Hitam"],
-            environment: "Lingkungan yang memungkinkan eksplorasi praktis"
+            colors: ["#c2e9fb", "#a1c4fd"],
+            environment: "Lingkungan yang memungkinkan eksplorasi praktis",
+            bgColor: "personality-istp"
         },
         ISFP: {
             name: "The Adventurer",
@@ -1078,8 +1091,9 @@ function initializeResultPage() {
             traits: ["Fleksibel", "Menawan", "Artistik", "Pemalu", "Spontan"],
             playlist: "https://open.spotify.com/playlist/7cXDVmkqqvXsZIilj3iHRw?si=9cc3d9b7eca94f0c",
             compatibility: ["ENFJ", "ESTJ"],
-            colors: ["Hijau", "Krem"],
-            environment: "Lingkungan yang estetik dan personal"
+            colors: ["#f6d365", "#fda085"],
+            environment: "Lingkungan yang estetik dan personal",
+            bgColor: "personality-isfp"
         },
         ESTP: {
             name: "The Entrepreneur",
@@ -1088,8 +1102,9 @@ function initializeResultPage() {
             traits: ["Enerjik", "Pandai", "Perseptif", "Spontan", "Berani"],
             playlist: "https://open.spotify.com/playlist/02ZbDH1vLYQQxs6LqX9dRQ?si=e278dc3385df4c24",
             compatibility: ["ISFJ", "ISTJ"],
-            colors: ["Merah", "Perak"],
-            environment: "Lingkungan yang dinamis dan penuh aksi"
+            colors: ["#ff9a9e", "#fad0c4"],
+            environment: "Lingkungan yang dinamis dan penuh aksi",
+            bgColor: "personality-estp"
         },
         ESFP: {
             name: "The Entertainer",
@@ -1098,8 +1113,9 @@ function initializeResultPage() {
             traits: ["Spontan", "Enerjik", "Antusias", "Sosial", "Praktis"],
             playlist: "https://open.spotify.com/playlist/4qVOTRkyqZFpqcTqG6yuI8?si=400b439ab8094fe9",
             compatibility: ["ISFJ", "ISTJ"],
-            colors: ["Kuning", "Oranye"],
-            environment: "Lingkungan sosial yang menyenangkan"
+            colors: ["#a1c4fd", "#c2e9fb"],
+            environment: "Lingkungan sosial yang menyenangkan",
+            bgColor: "personality-esfp"
         }
     };
 
@@ -1121,10 +1137,25 @@ function initializeResultPage() {
         `<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">${trait}</span>`
     ).join('');
     
-    // Set personality-specific background color
+    // Apply personality-specific background color
     const personalityHeader = document.querySelector('.personality-header');
     if (personalityHeader) {
-        personalityHeader.classList.add(`personality-${personalityType.toLowerCase()}`);
+        // Remove any existing personality classes
+        personalityHeader.classList.remove(
+            'personality-intj', 'personality-intp', 'personality-entj', 'personality-entp',
+            'personality-infj', 'personality-infp', 'personality-enfj', 'personality-enfp',
+            'personality-istj', 'personality-isfj', 'personality-estj', 'personality-esfj',
+            'personality-istp', 'personality-isfp', 'personality-estp', 'personality-esfp'
+        );
+        
+        // Add the specific personality background class
+        personalityHeader.classList.add(data.bgColor);
+        
+        // Update the full name background with personality colors
+        const fullNameElement = document.getElementById('personality-fullname');
+        if (fullNameElement) {
+            fullNameElement.className = 'text-center text-white bg-white/20 rounded-full px-4 py-2 backdrop-blur-sm personality-type-badge';
+        }
     }
     
     // Initialize chart
@@ -1132,6 +1163,9 @@ function initializeResultPage() {
     
     // Set up download button
     document.getElementById('download-btn').addEventListener('click', downloadResult);
+    
+    // Update page title with personality type
+    document.title = `${personalityType} - ${data.name} | Pantulan Persona`;
 }
 
 function initializePersonalityChart(personalityType) {
@@ -1221,32 +1255,160 @@ function initializePersonalityChart(personalityType) {
 }
 
 function downloadResult() {
-    // In a real implementation, this would generate a PDF of the results
-    alert('Fitur download hasil akan segera tersedia!');
-    
-    // For now, we'll create a simple text version
-    const personalityType = document.getElementById('personality-type').textContent;
-    const personalityName = document.getElementById('personality-name').textContent;
-    const description = document.getElementById('personality-description').textContent;
-    
-    const content = `
+    // Show loading state
+    const downloadBtn = document.getElementById('download-btn');
+    const originalText = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        Membuat PNG...
+    `;
+    downloadBtn.disabled = true;
+
+    // Use html2canvas to capture the result section
+    setTimeout(() => {
+        const resultSection = document.querySelector('.bg-white.rounded-xl.shadow-lg');
+        
+        // Options for better quality
+        const options = {
+            scale: 2, // Higher scale for better quality
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#f9fafb',
+            logging: false,
+            width: resultSection.scrollWidth,
+            height: resultSection.scrollHeight,
+            onclone: function(clonedDoc) {
+                // Style adjustments for the cloned document
+                const clonedResult = clonedDoc.querySelector('.bg-white.rounded-xl.shadow-lg');
+                if (clonedResult) {
+                    // Ensure proper styling in the captured image
+                    clonedResult.style.width = '100%';
+                    clonedResult.style.height = 'auto';
+                    clonedResult.style.borderRadius = '12px';
+                    clonedResult.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
+                }
+            }
+        };
+
+        // Load html2canvas library dynamically if not already loaded
+        if (typeof html2canvas === 'undefined') {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+            script.integrity = 'sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyooqYO/TPEEkYcjdMNBChtcW0edFwQ==';
+            script.crossOrigin = 'anonymous';
+            script.onload = () => generateImage(resultSection, options);
+            document.head.appendChild(script);
+        } else {
+            generateImage(resultSection, options);
+        }
+
+        function generateImage(element, options) {
+            html2canvas(element, options).then(canvas => {
+                // Convert canvas to PNG
+                const pngUrl = canvas.toDataURL('image/png');
+                
+                // Create download link
+                const downloadLink = document.createElement('a');
+                const personalityType = document.getElementById('personality-type').textContent;
+                
+                downloadLink.href = pngUrl;
+                downloadLink.download = `hasil-mbti-${personalityType}.png`;
+                downloadLink.style.display = 'none';
+                
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+                
+                // Restore button state
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+                
+                // Show success message
+                showDownloadSuccess();
+            }).catch(error => {
+                console.error('Error generating image:', error);
+                
+                // Fallback to text download
+                fallbackToTextDownload();
+                
+                // Restore button state
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+            });
+        }
+
+        function fallbackToTextDownload() {
+            const personalityType = document.getElementById('personality-type').textContent;
+            const personalityName = document.getElementById('personality-name').textContent;
+            const description = document.getElementById('personality-description').textContent;
+            const traits = Array.from(document.querySelectorAll('#personality-traits span'))
+                .map(span => span.textContent).join(', ');
+            const compatibility = document.getElementById('personality-compatibility').textContent;
+            const colors = document.getElementById('personality-colors').textContent;
+            const environment = document.getElementById('personality-environment').textContent;
+            
+            const content = `
 HASIL TES KEPRIBADIAN MBTI - PANTULAN PERSONA
+=============================================
 
 Tipe Kepribadian: ${personalityType} - ${personalityName}
+${document.getElementById('personality-fullname').textContent}
 
-Deskripsi:
+CIRI-CIRI UTAMA:
+${traits}
+
+DESKRIPSI:
 ${description}
 
+REKOMENDASI:
+- Playlist: ${document.getElementById('personality-playlist').href}
+- Kecocokan: ${compatibility}
+- Warna: ${colors}
+- Lingkungan: ${environment}
+
 Terima kasih telah mengikuti tes kepribadian MBTI di Pantulan Persona!
-    `;
-    
-    const blob = new Blob([content], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `hasil-mbti-${personalityType}.txt`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+
+Website: Pantulan Persona
+Tanggal: ${new Date().toLocaleDateString('id-ID')}
+            `;
+            
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `hasil-mbti-${personalityType}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function showDownloadSuccess() {
+            // Create success notification
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform transition-all duration-300 animate-bounce';
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Hasil berhasil diunduh sebagai PNG!</span>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+    }, 500);
 }
