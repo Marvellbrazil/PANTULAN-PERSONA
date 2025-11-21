@@ -939,7 +939,7 @@ function initializeResultPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const personalityType = urlParams.get('type') || 'INTJ';
     
-    // Personality data with updated Spotify playlists and colors
+    // Enhanced personality data with dynamic content
     const personalityData = {
         INTJ: {
             name: "The Architect",
@@ -948,9 +948,28 @@ function initializeResultPage() {
             traits: ["Visioner", "Strategis", "Analitis", "Deterministik", "Mandiri"],
             playlist: "https://open.spotify.com/playlist/6XLe6xcYSiIJhH30yL4bCD?si=a54b84e55b574f7c",
             compatibility: ["ENFP", "ENTP"],
-            colors: ["#667eea", "#764ba2"],
+            colors: ["Ungu", "Biru Tua"],
             environment: "Lingkungan yang tenang dan terstruktur",
-            bgColor: "personality-intj"
+            bgColor: "personality-intj",
+            developmentTips: [
+                "Belajar untuk lebih terbuka dengan pendapat orang lain",
+                "Coba luangkan waktu untuk kegiatan sosial yang terstruktur",
+                "Kembangkan kemampuan empati dalam berkomunikasi",
+                "Jangan takut untuk mendelegasikan tugas kepada orang lain"
+            ],
+            careerSuggestions: [
+                "Analis Bisnis",
+                "Arsitek Sistem",
+                "Konsultan Strategi", 
+                "Peneliti & Pengembang",
+                "Data Scientist"
+            ],
+            funFacts: [
+                "Hanya 2-4% populasi dunia yang memiliki tipe INTJ",
+                "Banyak CEO dan pemimpin visioner adalah INTJ",
+                "Mereka dikenal sebagai 'arsitek' karena kemampuan perencanaannya",
+                "INTJ sering disebut sebagai tipe kepribadian paling langka"
+            ]
         },
         INTP: {
             name: "The Thinker",
@@ -959,9 +978,28 @@ function initializeResultPage() {
             traits: ["Inovatif", "Logis", "Kurios", "Abstrak", "Kreatif"],
             playlist: "https://open.spotify.com/playlist/4Oh3b8bvVKOrkj079iXbM6?si=3d9bfc93511842d1",
             compatibility: ["ENTJ", "ENFJ"],
-            colors: ["#4facfe", "#00f2fe"],
+            colors: ["Biru", "Hijau"],
             environment: "Ruang kerja pribadi yang tenang",
-            bgColor: "personality-intp"
+            bgColor: "personality-intp",
+            developmentTips: [
+                "Coba terapkan ide-ide teoritis ke dalam praktik",
+                "Belajar untuk lebih terorganisir dalam kehidupan sehari-hari",
+                "Kembangkan kemampuan presentasi dan komunikasi",
+                "Jangan ragu untuk berkolaborasi dengan orang lain"
+            ],
+            careerSuggestions: [
+                "Ilmuwan Penelitian",
+                "Programmer & Developer",
+                "Filsuf & Akademisi",
+                "Analis Sistem",
+                "Konsultan Teknologi"
+            ],
+            funFacts: [
+                "INTP membentuk sekitar 3-5% populasi",
+                "Mereka dikenal sebagai 'pemikir' yang inovatif",
+                "Banyak penemu dan ilmuwan terkenal adalah INTP",
+                "INTP sangat menghargai kebebasan intelektual"
+            ]
         },
         ENTJ: {
             name: "The Commander",
@@ -970,9 +1008,28 @@ function initializeResultPage() {
             traits: ["Tegas", "Visioner", "Organisator", "Efisien", "Karismatik"],
             playlist: "https://open.spotify.com/playlist/4tRHeotm3SmJsalwFQmqbC?si=75871952c918407f",
             compatibility: ["INTP", "INFP"],
-            colors: ["#f093fb", "#f5576c"],
+            colors: ["Merah", "Emas"],
             environment: "Lingkungan dinamis dengan tanggung jawab",
-            bgColor: "personality-entj"
+            bgColor: "personality-entj",
+            developmentTips: [
+                "Belajar untuk lebih sabar dengan proses orang lain",
+                "Kembangkan kemampuan mendengarkan yang lebih baik",
+                "Coba hargai perasaan dan emosi tim",
+                "Luangkan waktu untuk refleksi diri"
+            ],
+            careerSuggestions: [
+                "CEO & Direktur",
+                "Manajer Proyek",
+                "Pengusaha",
+                "Konsultan Manajemen",
+                "Analis Keuangan"
+            ],
+            funFacts: [
+                "ENTJ adalah pemimpin alami yang hanya 2-5% populasi",
+                "Mereka sangat efektif dalam posisi kepemimpinan",
+                "Banyak politisi dan eksekutif adalah ENTJ",
+                "ENTJ dikenal karena kemampuan organisasi yang luar biasa"
+            ]
         },
         ENTP: {
             name: "The Debater",
@@ -981,9 +1038,28 @@ function initializeResultPage() {
             traits: ["Cerdas", "Inovatif", "Energik", "Argumentatif", "Pandai"],
             playlist: "https://open.spotify.com/playlist/5lmyYiNY4WpkWizIQfT7OW?si=66b921131d4e41e7",
             compatibility: ["INFJ", "INTJ"],
-            colors: ["#ff9a9e", "#fecfef"],
+            colors: ["Oranye", "Ungu"],
             environment: "Lingkungan yang menantang dan berubah-ubah",
-            bgColor: "personality-entp"
+            bgColor: "personality-entp",
+            developmentTips: [
+                "Belajar untuk menyelesaikan proyek yang sudah dimulai",
+                "Kembangkan kemampuan follow-through",
+                "Coba lebih peka terhadap perasaan orang lain dalam debat",
+                "Latih kedisiplinan dalam kehidupan sehari-hari"
+            ],
+            careerSuggestions: [
+                "Pengacara",
+                "Marketing Strategist",
+                "Wirausaha",
+                "Konsultan Inovasi",
+                "Product Manager"
+            ],
+            funFacts: [
+                "ENTP adalah pemecah masalah yang kreatif (3-5% populasi)",
+                "Mereka ahli dalam melihat kemungkinan baru",
+                "Banyak inovator dan entrepreneur adalah ENTP",
+                "ENTP dikenal karena kemampuan debat yang tajam"
+            ]
         },
         INFJ: {
             name: "The Advocate",
@@ -992,9 +1068,28 @@ function initializeResultPage() {
             traits: ["Idealistis", "Berprinsip", "Inspiratif", "Intuitif", "Kreatif"],
             playlist: "https://open.spotify.com/playlist/0S7U6idUEvlFDjbUHAK8HQ?si=3e377ae8aa2e4b2c",
             compatibility: ["ENFP", "ENTP"],
-            colors: ["#a8edea", "#fed6e3"],
+            colors: ["Ungu", "Hijau"],
             environment: "Lingkungan yang bermakna dan harmonis",
-            bgColor: "personality-infj"
+            bgColor: "personality-infj",
+            developmentTips: [
+                "Belajar untuk mengatakan 'tidak' ketika diperlukan",
+                "Jangan mengorbankan diri sendiri untuk orang lain",
+                "Kembangkan batasan yang sehat dalam hubungan",
+                "Cari komunitas yang mendukung nilai-nilai Anda"
+            ],
+            careerSuggestions: [
+                "Konselor & Psikolog",
+                "Penulis & Penyair",
+                "Pekerja Sosial",
+                "Guru & Mentor",
+                "Spesialis SDM"
+            ],
+            funFacts: [
+                "INFJ adalah tipe paling langka (hanya 1-2% populasi)",
+                "Mereka dikenal sebagai 'sang penasihat'",
+                "Banyak aktivis dan pembaharu sosial adalah INFJ",
+                "INFJ memiliki intuisi yang sangat kuat tentang orang"
+            ]
         },
         INFP: {
             name: "The Mediator",
@@ -1003,9 +1098,28 @@ function initializeResultPage() {
             traits: ["Empatik", "Kreatif", "Idealistis", "Fleksibel", "Artistik"],
             playlist: "https://open.spotify.com/playlist/6avRBWsApQehZSvV1Xuy4m?si=9bc4483be1694f1b",
             compatibility: ["ENFJ", "ENTJ"],
-            colors: ["#d299c2", "#fef9d7"],
+            colors: ["Hijau", "Biru"],
             environment: "Lingkungan yang mendukung ekspresi diri",
-            bgColor: "personality-infp"
+            bgColor: "personality-infp",
+            developmentTips: [
+                "Belajar untuk lebih tegas dalam mengambil keputusan",
+                "Jangan takut untuk menunjukkan karya Anda ke dunia",
+                "Kembangkan rutinitas yang terstruktur",
+                "Cari keseimbangan antara idealisme dan realitas"
+            ],
+            careerSuggestions: [
+                "Penulis Kreatif",
+                "Seniman & Desainer",
+                "Psikolog",
+                "Guru Seni",
+                "Pekerja Kemanusiaan"
+            ],
+            funFacts: [
+                "INFP membentuk sekitar 4-5% populasi",
+                "Mereka adalah 'penyembuh' yang alami",
+                "Banyak penulis dan seniman terkenal adalah INFP",
+                "INFP sangat menghargai autentisitas dan makna"
+            ]
         },
         ENFJ: {
             name: "The Protagonist",
@@ -1014,9 +1128,28 @@ function initializeResultPage() {
             traits: ["Karismatik", "Inspiratif", "Empatik", "Organisator", "Persuasif"],
             playlist: "https://open.spotify.com/playlist/2yyz0PaJ5o0nq8nizAwNR6?si=4f1b21e802b24803",
             compatibility: ["INFP", "ISFP"],
-            colors: ["#89f7fe", "#66a6ff"],
+            colors: ["Emas", "Merah"],
             environment: "Lingkungan sosial yang harmonis",
-            bgColor: "personality-enfj"
+            bgColor: "personality-enfj",
+            developmentTips: [
+                "Belajar untuk menerima kritik dengan lebih baik",
+                "Jangan terlalu mengambil beban orang lain",
+                "Kembangkan waktu untuk diri sendiri",
+                "Latih kemampuan mendengarkan tanpa selalu memberi solusi"
+            ],
+            careerSuggestions: [
+                "Guru & Dosen",
+                "Manajer SDM",
+                "Konselor",
+                "Public Relations",
+                "Event Planner"
+            ],
+            funFacts: [
+                "ENFJ adalah pemimpin yang inspiratif (2-5% populasi)",
+                "Mereka dikenal sebagai 'guru' yang alami",
+                "Banyak motivator dan pembicara adalah ENFJ",
+                "ENFJ sangat pandai memahami kebutuhan orang lain"
+            ]
         },
         ENFP: {
             name: "The Campaigner",
@@ -1025,9 +1158,28 @@ function initializeResultPage() {
             traits: ["Antusias", "Kreatif", "Sosial", "Optimistis", "Spontan"],
             playlist: "https://open.spotify.com/playlist/3vV3zUk4JQwfPJvrzoYeqS?si=2c0cc93264244fed",
             compatibility: ["INTJ", "INFJ"],
-            colors: ["#fdbb2d", "#22c1c3"],
+            colors: ["Oranye", "Merah Muda"],
             environment: "Lingkungan yang dinamis dan sosial",
-            bgColor: "personality-enfp"
+            bgColor: "personality-enfp",
+            developmentTips: [
+                "Belajar untuk fokus dan menyelesaikan proyek",
+                "Kembangkan kemampuan organisasi",
+                "Jangan takut untuk membuat komitmen jangka panjang",
+                "Cari cara untuk menyalurkan energi secara produktif"
+            ],
+            careerSuggestions: [
+                "Jurnalis",
+                "Marketing Creative",
+                "Actor & Presenter",
+                "Conselor",
+                "Event Coordinator"
+            ],
+            funFacts: [
+                "ENFP adalah jiwa bebas yang energik (6-8% populasi)",
+                "Mereka dikenal sebagai 'inspirator'",
+                "Banyak artis dan kreator konten adalah ENFP",
+                "ENFP memiliki kemampuan luar biasa untuk menghibur orang"
+            ]
         },
         ISTJ: {
             name: "The Logistician",
@@ -1036,9 +1188,28 @@ function initializeResultPage() {
             traits: ["Praktis", "Dapat Diandalkan", "Bertanggung Jawab", "Tradisional", "Terorganisir"],
             playlist: "https://open.spotify.com/playlist/3c0U9xTSMJrX4A5omWt0gK?si=ff401797c833459c",
             compatibility: ["ESFP", "ESTP"],
-            colors: ["#8e9eab", "#eef2f3"],
+            colors: ["Biru", "Abu-abu"],
             environment: "Lingkungan yang terstruktur dan terorganisir",
-            bgColor: "personality-istj"
+            bgColor: "personality-istj",
+            developmentTips: [
+                "Coba lebih terbuka dengan perubahan dan ide baru",
+                "Belajar untuk lebih fleksibel dalam jadwal",
+                "Kembangkan kemampuan adaptasi",
+                "Jangan ragu untuk mencoba hal-hal di luar rutinitas"
+            ],
+            careerSuggestions: [
+                "Akuntan",
+                "Administrator",
+                "Analis Data",
+                "Pustakawan",
+                "Quality Control"
+            ],
+            funFacts: [
+                "ISTJ adalah tipe paling umum (11-14% populasi)",
+                "Mereka adalah tulang punggung organisasi yang andal",
+                "Banyak administrator dan manager yang efisien adalah ISTJ",
+                "ISTJ sangat menghargai ketepatan dan keandalan"
+            ]
         },
         ISFJ: {
             name: "The Defender",
@@ -1047,9 +1218,28 @@ function initializeResultPage() {
             traits: ["Protektif", "Penuh Kasih", "Dapat Diandalkan", "Tradisional", "Praktis"],
             playlist: "https://open.spotify.com/playlist/3KMb5q5AUYv70a72dfzvwh?si=ec695aae4cf146f1",
             compatibility: ["ESFP", "ESTP"],
-            colors: ["#a3bded", "#6991c7"],
+            colors: ["Biru Muda", "Merah Muda"],
             environment: "Lingkungan yang mendukung dan stabil",
-            bgColor: "personality-isfj"
+            bgColor: "personality-isfj",
+            developmentTips: [
+                "Belajar untuk lebih memperhatikan kebutuhan diri sendiri",
+                "Jangan takut untuk mengatakan 'tidak'",
+                "Kembangkan kemampuan untuk menerima pujian",
+                "Cari cara untuk mengekspresikan perasaan dengan lebih terbuka"
+            ],
+            careerSuggestions: [
+                "Perawat",
+                "Guru",
+                "Adminstrator",
+                "Pustakawan",
+                "Customer Service"
+            ],
+            funFacts: [
+                "ISFJ adalah pelindung yang setia (9-14% populasi)",
+                "Mereka dikenal sebagai 'sang pembela'",
+                "Banyak pekerja di bidang kesehatan dan pendidikan adalah ISFJ",
+                "ISFJ memiliki memori yang sangat baik tentang orang dan detail"
+            ]
         },
         ESTJ: {
             name: "The Executive",
@@ -1058,9 +1248,28 @@ function initializeResultPage() {
             traits: ["Tegas", "Terorganisir", "Tradisional", "Pemimpin", "Praktis"],
             playlist: "https://open.spotify.com/playlist/7j7LfYqwkyvg0Wyx0FQkfy?si=21ef71e601304b1c",
             compatibility: ["ISFP", "ISTP"],
-            colors: ["#fad0c4", "#ffd1ff"],
+            colors: ["Biru Navy", "Merah"],
             environment: "Lingkungan yang terstruktur dengan hierarki jelas",
-            bgColor: "personality-estj"
+            bgColor: "personality-estj",
+            developmentTips: [
+                "Belajar untuk lebih memahami perasaan orang lain",
+                "Coba lebih fleksibel dengan aturan yang ada",
+                "Kembangkan empati dalam kepemimpinan",
+                "Luangkan waktu untuk mendengarkan sebelum mengambil keputusan"
+            ],
+            careerSuggestions: [
+                "Manajer Operasional",
+                "Hakim",
+                "Project Manager",
+                "Supervisor",
+                "Analis Bisnis"
+            ],
+            funFacts: [
+                "ESTJ adalah pemimpin tradisional (8-12% populasi)",
+                "Mereka sangat efektif dalam menegakkan aturan dan prosedur",
+                "Banyak manager dan supervisor adalah ESTJ",
+                "ESTJ dikenal karena kemampuan organisasi yang kuat"
+            ]
         },
         ESFJ: {
             name: "The Consul",
@@ -1069,9 +1278,28 @@ function initializeResultPage() {
             traits: ["Peduli", "Sosial", "Populer", "Tradisional", "Praktis"],
             playlist: "https://open.spotify.com/playlist/4mEJvZ8NpnXzSzrm9qKDev?si=2323afb451384ba5",
             compatibility: ["ISFP", "ISTP"],
-            colors: ["#ffecd2", "#fcb69f"],
+            colors: ["Merah Muda", "Kuning"],
             environment: "Lingkungan sosial yang harmonis",
-            bgColor: "personality-esfj"
+            bgColor: "personality-esfj",
+            developmentTips: [
+                "Belajar untuk tidak terlalu bergantung pada pendapat orang lain",
+                "Kembangkan kemampuan untuk menghadapi konflik",
+                "Jangan takut untuk membuat keputusan yang tidak populer",
+                "Cari waktu untuk diri sendiri di tengah kesibukan sosial"
+            ],
+            careerSuggestions: [
+                "Guru",
+                "Perawat",
+                "HR Specialist",
+                "Event Planner",
+                "Sales Representative"
+            ],
+            funFacts: [
+                "ESFJ adalah tipe sosial yang populer (9-13% populasi)",
+                "Mereka dikenal sebagai 'sang penyedia'",
+                "Banyak pekerja di bidang pelayanan dan pendidikan adalah ESFJ",
+                "ESFJ sangat pandai menciptakan harmoni dalam kelompok"
+            ]
         },
         ISTP: {
             name: "The Virtuoso",
@@ -1080,9 +1308,28 @@ function initializeResultPage() {
             traits: ["Berani", "Praktis", "Fleksibel", "Spontan", "Mandiri"],
             playlist: "https://open.spotify.com/playlist/0krQvLDSmus5DLnsPHdWFV?si=ad410a414dac4eef",
             compatibility: ["ESFJ", "ESTJ"],
-            colors: ["#c2e9fb", "#a1c4fd"],
+            colors: ["Perak", "Hitam"],
             environment: "Lingkungan yang memungkinkan eksplorasi praktis",
-            bgColor: "personality-istp"
+            bgColor: "personality-istp",
+            developmentTips: [
+                "Belajar untuk lebih terbuka tentang perasaan Anda",
+                "Coba pertimbangkan konsekuensi jangka panjang dari tindakan",
+                "Kembangkan kemampuan untuk berkomitmen",
+                "Jangan ragu untuk meminta bantuan ketika diperlukan"
+            ],
+            careerSuggestions: [
+                "Teknisi",
+                "Pilot",
+                "Programmer",
+                "Ahli Forensik",
+                "Mekanik"
+            ],
+            funFacts: [
+                "ISTP adalah pemecah masalah praktis (4-6% populasi)",
+                "Mereka dikenal sebagai 'sang pengrajin'",
+                "Banyak atlet ekstrem dan petualang adalah ISTP",
+                "ISTP sangat ahli dalam menangani situasi darurat"
+            ]
         },
         ISFP: {
             name: "The Adventurer",
@@ -1091,9 +1338,28 @@ function initializeResultPage() {
             traits: ["Fleksibel", "Menawan", "Artistik", "Pemalu", "Spontan"],
             playlist: "https://open.spotify.com/playlist/7cXDVmkqqvXsZIilj3iHRw?si=9cc3d9b7eca94f0c",
             compatibility: ["ENFJ", "ESTJ"],
-            colors: ["#f6d365", "#fda085"],
+            colors: ["Hijau", "Krem"],
             environment: "Lingkungan yang estetik dan personal",
-            bgColor: "personality-isfp"
+            bgColor: "personality-isfp",
+            developmentTips: [
+                "Belajar untuk lebih tegas dalam mengekspresikan pendapat",
+                "Jangan takut untuk menunjukkan bakat Anda ke dunia",
+                "Kembangkan kemampuan perencanaan jangka panjang",
+                "Cari komunitas yang menghargai kreativitas Anda"
+            ],
+            careerSuggestions: [
+                "Seniman",
+                "Desainer Mode",
+                "Fotografer",
+                "Florist",
+                "Koki"
+            ],
+            funFacts: [
+                "ISFP adalah seniman yang pemalu (5-9% populasi)",
+                "Mereka dikenal sebagai 'petualang' yang estetik",
+                "Banyak seniman dan desainer adalah ISFP",
+                "ISFP sangat menghargai kebebasan dan keindahan"
+            ]
         },
         ESTP: {
             name: "The Entrepreneur",
@@ -1102,9 +1368,28 @@ function initializeResultPage() {
             traits: ["Enerjik", "Pandai", "Perseptif", "Spontan", "Berani"],
             playlist: "https://open.spotify.com/playlist/02ZbDH1vLYQQxs6LqX9dRQ?si=e278dc3385df4c24",
             compatibility: ["ISFJ", "ISTJ"],
-            colors: ["#ff9a9e", "#fad0c4"],
+            colors: ["Merah", "Perak"],
             environment: "Lingkungan yang dinamis dan penuh aksi",
-            bgColor: "personality-estp"
+            bgColor: "personality-estp",
+            developmentTips: [
+                "Belajar untuk mempertimbangkan konsekuensi jangka panjang",
+                "Kembangkan kemampuan untuk lebih sabar",
+                "Coba lebih memperhatikan perasaan orang lain",
+                "Latih kemampuan untuk menyelesaikan proyek hingga tuntas"
+            ],
+            careerSuggestions: [
+                "Sales",
+                "Entrepreneur",
+                "Marketing",
+                "Atlet Profesional",
+                "Detektif"
+            ],
+            funFacts: [
+                "ESTP adalah petualang yang energik (4-5% populasi)",
+                "Mereka dikenal sebagai 'sang pengusaha'",
+                "Banyak atlet dan pemain bisnis adalah ESTP",
+                "ESTP sangat pandai memanfaatkan peluang"
+            ]
         },
         ESFP: {
             name: "The Entertainer",
@@ -1113,9 +1398,28 @@ function initializeResultPage() {
             traits: ["Spontan", "Enerjik", "Antusias", "Sosial", "Praktis"],
             playlist: "https://open.spotify.com/playlist/4qVOTRkyqZFpqcTqG6yuI8?si=400b439ab8094fe9",
             compatibility: ["ISFJ", "ISTJ"],
-            colors: ["#a1c4fd", "#c2e9fb"],
+            colors: ["Kuning", "Oranye"],
             environment: "Lingkungan sosial yang menyenangkan",
-            bgColor: "personality-esfp"
+            bgColor: "personality-esfp",
+            developmentTips: [
+                "Belajar untuk lebih fokus pada tujuan jangka panjang",
+                "Kembangkan kemampuan organisasi",
+                "Jangan takut untuk menghadapi konflik ketika diperlukan",
+                "Cari cara untuk menyalurkan energi secara konstruktif"
+            ],
+            careerSuggestions: [
+                "Actor & Presenter",
+                "Event Planner",
+                "Sales",
+                "Guru TK",
+                "Tour Guide"
+            ],
+            funFacts: [
+                "ESFP adalah penghibur yang energik (4-9% populasi)",
+                "Mereka dikenal sebagai 'sang penghibur'",
+                "Banyak performer dan host adalah ESFP",
+                "ESFP memiliki kemampuan luar biasa untuk membuat orang tertawa"
+            ]
         }
     };
 
@@ -1141,12 +1445,14 @@ function initializeResultPage() {
     const personalityHeader = document.querySelector('.personality-header');
     if (personalityHeader) {
         // Remove any existing personality classes
-        personalityHeader.classList.remove(
+        const allPersonalityClasses = [
             'personality-intj', 'personality-intp', 'personality-entj', 'personality-entp',
             'personality-infj', 'personality-infp', 'personality-enfj', 'personality-enfp',
             'personality-istj', 'personality-isfj', 'personality-estj', 'personality-esfj',
             'personality-istp', 'personality-isfp', 'personality-estp', 'personality-esfp'
-        );
+        ];
+        
+        personalityHeader.classList.remove(...allPersonalityClasses);
         
         // Add the specific personality background class
         personalityHeader.classList.add(data.bgColor);
@@ -1158,14 +1464,62 @@ function initializeResultPage() {
         }
     }
     
+    // Update dynamic content sections
+    updateDynamicContent(data);
+    
     // Initialize chart
     initializePersonalityChart(personalityType);
     
     // Set up download button
-    document.getElementById('download-btn').addEventListener('click', downloadResult);
+    const downloadBtn = document.getElementById('download-btn');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', downloadResult);
+    }
     
     // Update page title with personality type
     document.title = `${personalityType} - ${data.name} | Pantulan Persona`;
+}
+
+// Helper function to update dynamic content
+function updateDynamicContent(data) {
+    // Update development tips
+    const tipsContainer = document.getElementById('development-tips');
+    if (tipsContainer && data.developmentTips) {
+        tipsContainer.innerHTML = data.developmentTips.map(tip => `
+            <li class="flex items-start">
+                <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                ${tip}
+            </li>
+        `).join('');
+    }
+    
+    // Update career suggestions
+    const careerContainer = document.getElementById('career-suggestions');
+    if (careerContainer && data.careerSuggestions) {
+        careerContainer.innerHTML = data.careerSuggestions.map(career => `
+            <li class="flex items-start">
+                <svg class="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                ${career}
+            </li>
+        `).join('');
+    }
+    
+    // Update fun facts
+    const factsContainer = document.getElementById('fun-facts');
+    if (factsContainer && data.funFacts) {
+        factsContainer.innerHTML = data.funFacts.map(fact => `
+            <li class="flex items-start">
+                <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                ${fact}
+            </li>
+        `).join('');
+    }
 }
 
 function initializePersonalityChart(personalityType) {
