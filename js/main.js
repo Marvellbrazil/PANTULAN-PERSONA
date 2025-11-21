@@ -1,4 +1,4 @@
-// Main JavaScript for Pantulan Persona - FULL VERSION
+// Main JavaScript for Pantulan Persona - FULL VERSION WITH KEYBOARD SUPPORT
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuButton = document.querySelector('.mobile-menu-button');
@@ -55,9 +55,63 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Question page specific functionality - FULL VERSION
+// Global variables for keyboard navigation
+let currentQuestion = 0;
+let userAnswers = [];
+let questions = [];
+
+// Keyboard event handler
+function handleKeyboardInput(event) {
+    // Only process if we're on question page
+    if (!window.location.pathname.includes('question.html')) return;
+
+    const key = event.key;
+    
+    // Number keys 1-4 for answer selection
+    if (key >= '1' && key <= '4') {
+        const optionIndex = parseInt(key) - 1;
+        selectOption(optionIndex);
+    }
+    
+    // Enter key for next question
+    if (key === 'Enter') {
+        event.preventDefault();
+        const nextButton = document.getElementById('next-button');
+        if (!nextButton.disabled) {
+            nextButton.click();
+        }
+    }
+    
+    // Backspace key for previous question
+    if (key === 'Backspace') {
+        event.preventDefault();
+        const prevButton = document.getElementById('prev-button');
+        if (!prevButton.disabled) {
+            prevButton.click();
+        }
+    }
+}
+
+// Add keyboard event listener
+document.addEventListener('keydown', handleKeyboardInput);
+
+// Function to select option by index
+function selectOption(optionIndex) {
+    const options = document.querySelectorAll('.option');
+    if (optionIndex >= 0 && optionIndex < options.length) {
+        options[optionIndex].click();
+        
+        // Add visual feedback for keyboard selection
+        options[optionIndex].classList.add('keyboard-selected');
+        setTimeout(() => {
+            options[optionIndex].classList.remove('keyboard-selected');
+        }, 200);
+    }
+}
+
+// Question page specific functionality - WITH KEYBOARD SUPPORT
 function initializeQuestionPage() {
-    const questions = [
+    questions = [
         // E/I Questions (15 questions)
         {
             id: 1,
@@ -727,8 +781,8 @@ function initializeQuestionPage() {
         }
     ];
 
-    let currentQuestion = 0;
-    const userAnswers = Array(questions.length).fill(null);
+    currentQuestion = 0;
+    userAnswers = Array(questions.length).fill(null);
     const progressBar = document.getElementById('progress-bar');
     const progressText = document.getElementById('progress-text');
     const questionContainer = document.getElementById('question-container');
@@ -744,17 +798,23 @@ function initializeQuestionPage() {
         const question = questions[index];
         questionContainer.innerHTML = `
             <div class="bg-white rounded-lg shadow-lg p-6 question-card fade-in">
-                <div class="mb-4">
+                <div class="mb-4 flex justify-between items-center">
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
                         Pertanyaan ${question.id}/60
                     </span>
+                    <span class="text-xs text-gray-500 hidden md:block">Gunakan tombol 1-4 pada keyboard</span>
                 </div>
                 <h3 class="text-xl font-semibold text-gray-800 mb-6">${question.text}</h3>
                 <div class="space-y-3">
                     ${question.options.map((option, i) => `
-                        <div class="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-indigo-50 cursor-pointer transition-all duration-200 option ${userAnswers[index] === option.value ? 'bg-indigo-50 border-indigo-300' : ''}" data-value="${option.value}" data-score="${option.score}">
-                            <input type="radio" id="option-${index}-${i}" name="question-${question.id}" value="${option.value}" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" ${userAnswers[index] === option.value ? 'checked' : ''}>
-                            <label for="option-${index}-${i}" class="ml-3 block text-sm font-medium text-gray-700 cursor-pointer">${option.text}</label>
+                        <div class="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-indigo-50 cursor-pointer transition-all duration-200 option ${userAnswers[index] === option.value ? 'bg-indigo-50 border-indigo-300' : ''}" data-value="${option.value}" data-score="${option.score}" data-index="${i}">
+                            <div class="flex items-center w-full">
+                                <div class="key-indicator w-6 h-6 flex items-center justify-center bg-gray-100 border border-gray-300 rounded text-xs font-mono text-gray-600 mr-3">
+                                    ${i + 1}
+                                </div>
+                                <input type="radio" id="option-${index}-${i}" name="question-${question.id}" value="${option.value}" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300" ${userAnswers[index] === option.value ? 'checked' : ''}>
+                                <label for="option-${index}-${i}" class="ml-3 block text-sm font-medium text-gray-700 cursor-pointer flex-1">${option.text}</label>
+                            </div>
                         </div>
                     `).join('')}
                 </div>
@@ -776,10 +836,11 @@ function initializeQuestionPage() {
             option.addEventListener('click', function() {
                 const value = this.getAttribute('data-value');
                 const score = parseInt(this.getAttribute('data-score'));
+                const optionIndex = parseInt(this.getAttribute('data-index'));
                 
                 // Remove selected style from all options
                 document.querySelectorAll('.option').forEach(opt => {
-                    opt.classList.remove('bg-indigo-50', 'border-indigo-300');
+                    opt.classList.remove('bg-indigo-50', 'border-indigo-300', 'keyboard-selected');
                 });
                 
                 // Add selected style to clicked option
@@ -794,7 +855,32 @@ function initializeQuestionPage() {
                 
                 // Enable next button
                 nextButton.disabled = false;
+                
+                // Show keyboard shortcut feedback
+                showKeyboardFeedback(optionIndex);
             });
+        });
+
+        // Focus management for accessibility
+        if (userAnswers[index]) {
+            const selectedOption = document.querySelector(`.option[data-value="${userAnswers[index]}"]`);
+            if (selectedOption) {
+                selectedOption.classList.add('bg-indigo-50', 'border-indigo-300');
+            }
+        }
+    }
+
+    // Show keyboard selection feedback
+    function showKeyboardFeedback(optionIndex) {
+        const keyIndicators = document.querySelectorAll('.key-indicator');
+        keyIndicators.forEach((indicator, index) => {
+            if (index === optionIndex) {
+                indicator.classList.add('bg-indigo-500', 'text-white', 'border-indigo-600');
+                setTimeout(() => {
+                    indicator.classList.remove('bg-indigo-500', 'text-white', 'border-indigo-600');
+                    indicator.classList.add('bg-gray-100', 'text-gray-600', 'border-gray-300');
+                }, 500);
+            }
         });
     }
 
