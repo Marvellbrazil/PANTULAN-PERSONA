@@ -3,6 +3,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #F9F8F6;
 }
 
 /* Smooth scrolling */
@@ -12,7 +13,7 @@ html {
 
 /* Custom gradient backgrounds */
 .gradient-bg {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #D9CFC7 0%, #C9B59C 100%);
 }
 
 /* Animation for cards */
@@ -38,16 +39,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #EFE9E3;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
+    background: #D9CFC7;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #a1a1a1;
+    background: #C9B59C;
 }
 
 /* Add these styles to your existing style.css */
@@ -61,17 +62,17 @@ html {
 @keyframes keyboardPulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+        box-shadow: 0 0 0 0 rgba(201, 181, 156, 0.7);
     }
 
     50% {
         transform: scale(1.02);
-        box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.4);
+        box-shadow: 0 0 0 4px rgba(201, 181, 156, 0.4);
     }
 
     100% {
         transform: scale(1.02);
-        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+        box-shadow: 0 0 0 0 rgba(201, 181, 156, 0);
     }
 }
 
@@ -84,6 +85,7 @@ html {
 /* Keyboard helper floating panel */
 #keyboard-helper {
     z-index: 40;
+    background-color: #EFE9E3;
 }
 
 /* Responsive keyboard helper */
@@ -95,7 +97,7 @@ html {
 
 /* Focus styles for accessibility */
 .option:focus {
-    outline: 2px solid #6366f1;
+    outline: 2px solid #C9B59C;
     outline-offset: 2px;
 }
 
@@ -104,4 +106,30 @@ html {
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     font-size: 0.75rem;
     line-height: 1;
+    background-color: #D9CFC7;
+    border: 1px solid #C9B59C;
+}
+
+/* Additional custom elements with new color palette */
+.card {
+    background-color: #F9F8F6;
+    border: 1px solid #EFE9E3;
+}
+
+.button-primary {
+    background-color: #C9B59C;
+    color: #F9F8F6;
+}
+
+.button-primary:hover {
+    background-color: #D9CFC7;
+}
+
+.sidebar {
+    background-color: #EFE9E3;
+}
+
+.header {
+    background-color: #F9F8F6;
+    border-bottom: 1px solid #D9CFC7;
 }
